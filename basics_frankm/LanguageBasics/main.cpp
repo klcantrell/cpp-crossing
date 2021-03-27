@@ -30,7 +30,8 @@ int main()
     long people_in_florida{20'610'000};
     cout << "There are about " << people_in_florida << " people in florida" << endl;
 
-    long people_on_earth{7'600'000'000'000'000'000};
+    // long people_on_earth{7'600'000'000'000'000'000}; // will not compile on Windows
+    long long people_on_earth{7'600'000'000'000'000'000}; // will not compile on Windows
     // int people_on_earth{7'600'000'000'000'000'000}; // will not compile
     cout << "There are about " << people_on_earth << " people on earth" << endl;
 
