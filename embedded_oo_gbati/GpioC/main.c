@@ -2,9 +2,11 @@ static const int PERIPHERAL_BASE = 0x40000000;
 static const int AHB1_BASE = PERIPHERAL_BASE + 0x20000;
 static const int RCC_BASE = AHB1_BASE + 0x3800;
 static const int GPIOA_BASE = AHB1_BASE;
-
-static const int MODER_5_OUT = 1<<10;
-static const int LED_PIN = 1<<5;
+static const int GPIOB_BASE = AHB1_BASE + 0x400;
+static const int GPIOC_BASE = AHB1_BASE + 0x800;
+static const int GPIOD_BASE = AHB1_BASE + 0xC00;
+static const int GPIOE_BASE = AHB1_BASE + 0x1000;
+static const int GPIOH_BASE = AHB1_BASE + 0x1C00;
 
 typedef struct GPIOType
 {
@@ -54,21 +56,39 @@ typedef struct RCCType
 
 static RCCType* RCC = (RCCType*) RCC_BASE;
 static GPIOType* GPIOA = (GPIOType*) GPIOA_BASE;
+static GPIOType* GPIOB = (GPIOType*) GPIOB_BASE;
+static GPIOType* GPIOC = (GPIOType*) GPIOC_BASE;
+static GPIOType* GPIOD = (GPIOType*) GPIOD_BASE;
+static GPIOType* GPIOE = (GPIOType*) GPIOE_BASE;
+static GPIOType* GPIOH = (GPIOType*) GPIOH_BASE;
+
+static const int GPIOA_EN = 1<<0;
+static const int GPIOB_EN = 1<<1;
+static const int GPIOC_EN = 1<<2;
+static const int GPIOD_EN = 1<<3;
+static const int GPIOE_EN = 1<<4;
+static const int GPIOH_EN = 1<<7;
+
+static const int MODER_5_OUT = 1<<10;
+static const int LED_PIN = 1<<5;
 
 int main()
 {
-	RCC->AHB1ENR |= 0x01;
+	RCC->AHB1ENR |= GPIOA_EN | GPIOB_EN;
 	GPIOA->MODER |= MODER_5_OUT;
+	GPIOB->MODER |= MODER_5_OUT;
 	
 	while (1)
 	{
 		for (int x = 0; x < 900000; x++)
 		{
 			GPIOA->ODR |= LED_PIN;
+			GPIOB->ODR |= LED_PIN;
 		}
 		for (int x = 0; x < 900000; x++)
 		{
 			GPIOA->ODR &= ~LED_PIN;
+			GPIOB->ODR &= ~LED_PIN;
 		}
 	}
 }
