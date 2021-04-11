@@ -16,7 +16,7 @@ void vectors()
        << endl;
 
   cout << "What's the first test score?: ";
-  cin >> test_scores.at(0);
+  // cin >> test_scores.at(0);
   cout << "The test score you just added is " << test_scores.at(0) << endl;
 
   cout << "There are " << test_scores.size() << " test scores" << endl;
@@ -34,5 +34,32 @@ void vectors()
       {3, 2, 1, 4},
   };
   cout << "movie_ratings[3][3]: " << movie_ratings[3][3] << endl;
-  cout << "movie_ratings.at(3).at(3): " << movie_ratings.at(3).at(3) << endl;
+  cout << "movie_ratings.at(3).at(3): " << movie_ratings.at(3).at(3) << endl
+       << endl;
+
+  vector<int> data1;
+  data1.push_back(10);
+  data1.push_back(20);
+  cout << "data1 is " << data1.size() << " large" << endl;
+  cout << "First item in data1 is " << data1.at(0) << endl;
+  cout << "Second item in data1 is " << data1.at(1) << endl
+       << endl;
+
+  vector<int> data2;
+  data2.push_back(100);
+  data2.push_back(200);
+  cout << "data2 is " << data2.size() << " large" << endl;
+  cout << "First item in data2 is " << data2.at(0) << endl;
+  cout << "Second item in data2 is " << data2.at(1) << endl
+       << endl;
+
+  vector<vector<int>> combinedData;
+  combinedData.push_back(data1);
+  combinedData.push_back(data2);
+  cout << "combinedData.at(0).at(0) " << combinedData.at(0).at(0) << endl;
+  cout << "combinedData.at(1).at(0) " << combinedData.at(1).at(0) << endl
+       << endl;
+  data1.at(0) = 1000;
+  cout << "combinedData.at(0).at(0) " << combinedData.at(0).at(0) << endl;
+  cout << "combinedData.at(1).at(0) " << combinedData.at(1).at(0) << endl;
 }

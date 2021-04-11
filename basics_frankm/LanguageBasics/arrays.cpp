@@ -4,7 +4,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void arrays_and_vectors()
+void arrays()
 {
     int high_temperatures[365]{0};          // common way to initialize a whole array to 0
     int test_scores[]{100, 98, 96, 95, 86}; // common way to initialize an array

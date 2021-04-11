@@ -1,7 +1,7 @@
 #include "primitives.cpp"
 #include "sizeof_and_limits.cpp"
 #include "constants.cpp"
-#include "arrays_and_vectors.cpp"
+#include "arrays.cpp"
 #include "vectors.cpp"
 
 int main()
@@ -14,7 +14,7 @@ int main()
 
     // constants();
 
-    // arrays_and_vectors();
+    // arrays();
 
     vectors();
 
