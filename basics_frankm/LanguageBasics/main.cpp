@@ -3,6 +3,7 @@
 #include "constants.cpp"
 #include "arrays.cpp"
 #include "vectors.cpp"
+#include "section_8_challenge.cpp"
 
 int main()
 {
@@ -16,7 +17,9 @@ int main()
 
     // arrays();
 
-    vectors();
+    // vectors();
+
+    // section_8_challenge();
 
     return 0;
 }
