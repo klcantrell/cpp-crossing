@@ -1,10 +1,11 @@
 #include <iostream>
 
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
 
-int main() {
+int main()
+{
     int favorite_number;
     cout << "Enter your favorite number between 1 and 100: ";
     cin >> favorite_number;
