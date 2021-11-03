@@ -6,6 +6,7 @@
 #include "section_8_challenge.cpp"
 #include "functions.cpp"
 #include "pointers.cpp"
+#include "pointers_challenge_section_12.cpp"
 
 int main()
 {
@@ -23,9 +24,11 @@ int main()
 
     // section_8_challenge();
 
-    // functions();
+    functions();
 
-    pointers();
+    // pointers();
+
+    // pointers_challenge_section_12();
 
     return 0;
 }
