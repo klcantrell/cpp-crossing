@@ -77,7 +77,7 @@ void pointers()
 
     cout << "Second element: " << *(array_ptr + 1) << endl; // since each int is 4 bytes in size
 
-    delete array_ptr;
+    delete[] array_ptr;
 
     // arithmetic
     int scores[]{100, 95, 89, 68, -1};
@@ -114,4 +114,10 @@ void pointers()
     {
         cout << str << endl; // common to use references so we don't need to make copies of each item
     }
+
+    double temps[]{56.4, 100.2, 97.2};
+    double *temp_ptr_1 = &temps[2];
+    double *temp_ptr_2 = &temps[0];
+    cout << "Length between temps: " << temp_ptr_1 - temp_ptr_2 << endl;
+    cout << "Value of temp_ptr_1 - 2 " << *(temp_ptr_1 - 2) << endl;
 }
