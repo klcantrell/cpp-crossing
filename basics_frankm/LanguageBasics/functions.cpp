@@ -15,6 +15,7 @@ void display(int = 10);
 // void display(double = 10.2); // otherwise more than one overload would match
 void display(double);
 void display(string);
+unsigned long long factorial(unsigned long long);
 
 void functions()
 {
@@ -35,6 +36,7 @@ void functions()
     display("Kal");        // is promoted to C++ style string
 
     display();
+    cout << factorial(4) << endl;
 }
 
 void scale_number(int &num)
@@ -66,4 +68,13 @@ void display(double num)
 void display(string str)
 {
     cout << str << endl;
+}
+
+unsigned long long factorial(unsigned long long n)
+{
+    if (n == 0)
+    {
+        return 1;
+    }
+    return n * factorial(n - 1);
 }
