@@ -52,6 +52,9 @@ void scale_number()
 
 void display(int num)
 {
+    static int times_called{0}; // value retained between calls. like a global variable but scoped to this function
+    times_called += 1;
+    cout << "display(int num) called " << times_called << " times" << endl;
     cout << num << endl;
 }
 
