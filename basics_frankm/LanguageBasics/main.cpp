@@ -25,13 +25,13 @@ int main()
 
     // section_8_challenge();
 
-    strings();
+    // strings();
 
     // functions();
 
     // pointers();
 
-    // pointers_challenge_section_12();
+    pointers_challenge_section_12();
 
     return 0;
 }

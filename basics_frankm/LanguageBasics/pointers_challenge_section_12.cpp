@@ -38,29 +38,62 @@
 
 #include <iostream>
 
-using namespace std;
+using std::cin;
+using std::cout;
+
+using std::endl;
+
+void print(const int *const, int);
+int *apply_all(const int *const, int, const int *const, int);
 
 int pointers_challenge_section_12()
 {
-    // const size_t array1_size{5};
-    // const size_t array2_size{3};
+    const size_t array1_size{5};
+    const size_t array2_size{3};
 
-    // int array1[]{1, 2, 3, 4, 5};
-    // int array2[]{10, 20, 30};
+    int array1[]{1, 2, 3, 4, 5};
+    int array2[]{10, 20, 30};
 
-    // cout << "Array 1: ";
-    // print(array1, array1_size);
+    cout << "Array 1: ";
+    print(array1, array1_size);
 
-    // cout << "Array 2: ";
-    // print(array2, array2_size);
+    cout << "Array 2: ";
+    print(array2, array2_size);
 
-    // int *results = apply_all(array1, array1_size, array2, array2_size);
-    // constexpr size_t results_size{array1_size * array2_size};
+    int *results = apply_all(array1, array1_size, array2, array2_size);
+    constexpr size_t results_size{array1_size * array2_size};
 
-    // cout << "Result: ";
-    // print(results, results_size);
+    cout << "Result: ";
+    print(results, results_size);
+    cout << endl;
 
-    // cout << endl;
+    delete[] results;
 
     return 0;
+}
+
+void print(const int *const array, int size)
+{
+    cout << "[";
+    for (int i{0}; i < size; i++)
+    {
+        cout << " " << array[i];
+    }
+    cout << " ]" << endl;
+}
+
+int *apply_all(const int *const array_1, int array_1_size, const int *const array_2, int array_2_size)
+{
+    int result_size = array_1_size * array_2_size;
+    int *result = new int[result_size];
+    int position{0};
+    for (int i{0}; i < array_2_size; i++)
+    {
+        for (int j{0}; j < array_1_size; j++)
+        {
+            result[position] = array_2[i] * array_1[j];
+            position += 1;
+        }
+    }
+    return result;
 }
