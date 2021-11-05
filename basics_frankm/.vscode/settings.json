@@ -5,6 +5,8 @@
     "files.associations": {
         "iostream": "cpp",
         "ostream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iosfwd": "cpp",
+        "cctype": "cpp"
     }
 }
